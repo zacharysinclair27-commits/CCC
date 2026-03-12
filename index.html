@@ -521,13 +521,13 @@ const PLANS = {
 let currentPlan = 'free';
 
 function openModal(plan) {
+  if (plan === 'free') { window.open('https://payhip.com/b/ngGRe', '_blank'); return; }
   currentPlan = plan;
   const p = PLANS[plan];
   document.getElementById('modalTitle').textContent = '⚡ ' + p.title;
   document.getElementById('modalSub').textContent = p.sub;
   document.getElementById('modalLabel').textContent = p.label;
   document.getElementById('modalAmount').textContent = p.amount;
-  document.getElementById('paypalBtn').textContent = p.btnText;
   document.getElementById('payModal').classList.add('open');
 }
 function closeModal() { document.getElementById('payModal').classList.remove('open'); }
@@ -625,7 +625,7 @@ async function sendChat() {
         'Content-Type': 'application/json',
         'anthropic-version': '2023-06-01',
         'anthropic-dangerous-direct-browser-access': 'true',
-        'x-api-key': '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'
+        'x-api-key': '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'
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
